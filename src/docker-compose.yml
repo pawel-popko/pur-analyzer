@@ -1,0 +1,59 @@
+# ===========================================================
+#  PurAnalyzer - Docker Compose stack
+#  Services:
+#    1. postgres  → Database (persistent volume)
+#    2. api       → ASP.NET Core Web API (.NET 8)
+# ===========================================================
+
+services:
+  # -----------------------------
+  # PostgreSQL database container
+  # -----------------------------
+  postgres:
+    image: postgres:16-alpine                 # Lightweight Postgres image
+    container_name: puranalyzer-postgres
+    restart: always                           # Auto-restart if stopped
+    environment:
+      POSTGRES_DB: puranalyzer                # Database name
+      POSTGRES_USER: puranalyzer              # Username
+      POSTGRES_PASSWORD: devpass              # Password
+    ports:
+      - "5432:5432"                           # Map container port 5432 → host port 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data       # Persistent data volume (survives restarts)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U puranalyzer -d puranalyzer"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # -----------------------------
+  # ASP.NET Core Web API container
+  # -----------------------------
+  api:
+    build:
+      context: ..                             # Root directory of the repo
+      dockerfile: src/PurAnalyzer.Api/Dockerfile
+    container_name: puranalyzer-api
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy            # Wait until PostgreSQL is ready before starting API
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:8080
+      # Connection string for EF Core (overrides appsettings.json)
+      POSTGRES_CONNSTR: Host=postgres;Port=5432;Database=puranalyzer;Username=puranalyzer;Password=devpass
+      BASICAUTH_USERNAME: vs
+      BASICAUTH_PASSWORD: rekrutacja
+    ports:
+      - "8080:8080"                           # Expose Web API on localhost:8080
+    # Optional volume mount for hot reload (uncomment during local dev)
+    # volumes:
+    #   - ./PurAnalyzer.Api:/app
+
+# ------------------------------------------------------------
+# Named Docker volume for persistent PostgreSQL data storage
+# ------------------------------------------------------------
+volumes:
+  pgdata:

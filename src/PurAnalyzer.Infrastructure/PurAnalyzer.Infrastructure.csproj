@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Reference to the Application layer for shared abstractions/interfaces -->
+    <ProjectReference Include="..\PurAnalyzer.Application\PurAnalyzer.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- EF Core 9 runtime (base APIs for DbContext, LINQ, change tracking, etc.) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    
+    <!-- EF Core relational features (migrations, conventions, transactions, etc.) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+    
+    <!-- PostgreSQL provider for EF Core 9 (Npgsql) -->
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

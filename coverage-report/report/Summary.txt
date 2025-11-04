@@ -1,0 +1,32 @@
+Summary
+  Generated on: 03.11.2025 - 00:20:42
+  Coverage date: 03.11.2025 - 00:20:39
+  Parser: Cobertura
+  Assemblies: 2
+  Classes: 8
+  Files: 8
+  Line coverage: 100%
+  Covered lines: 418
+  Uncovered lines: 0
+  Coverable lines: 418
+  Total lines: 809
+  Branch coverage: 94.3% (202 of 214)
+  Covered branches: 202
+  Total branches: 214
+  Method coverage: 100% (71 of 71)
+  Full method coverage: 100% (71 of 71)
+  Covered methods: 71
+  Fully covered methods: 71
+  Total methods: 71
+
+PurAnalyzer.Application                                   100%
+  PurAnalyzer.Application.Analysis.AnalysisResult         100%
+  PurAnalyzer.Application.Analysis.PurFileAnalyzer        100%
+  PurAnalyzer.Application.Parsing.Document                100%
+  PurAnalyzer.Application.Parsing.DocumentItem            100%
+  PurAnalyzer.Application.Parsing.FileShape               100%
+  PurAnalyzer.Application.Parsing.ParsedContent           100%
+
+PurAnalyzer.Infrastructure                                100%
+  PurAnalyzer.Infrastructure.Parsing.PurFileParser        100%
+  PurAnalyzer.Infrastructure.Parsing.PurParsingHelpers    100%

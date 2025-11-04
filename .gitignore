@@ -1,0 +1,131 @@
+#############################################
+#  PurAnalyzer (.NET 8 + Clean Architecture)
+#############################################
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Tt]emp/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.userprefs
+
+# IDE and tools
+.vscode/
+.idea/
+*.vs/
+.vsconfig
+
+# Configuration backups
+*.bak
+*.orig
+*.tmp
+*.swp
+
+# Packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+.nuget/
+*.lock.json
+
+# Publish outputs
+/dist/
+publish/
+out/
+artifacts/
+deploy/
+*.publish.xml
+
+# Auto-generated files
+Generated_Code/
+ServiceFabricBackup/
+ClientApp/node_modules/
+node_modules/
+bower_components/
+
+# OS junk
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+.DS_Store
+$RECYCLE.BIN/
+*.lnk
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+*.DotCover
+
+# Rider
+.idea/
+*.iml
+.sln.iml
+
+# Visual Studio Code workspace
+*.code-workspace
+
+# JetBrains Rider test reports
+*.html
+*.json
+*.xml
+*.csv
+
+# Local environment and secrets
+.env
+.env.*
+*.local.json
+appsettings.*.local.json
+secrets.json
+
+# Docker-related
+docker-compose.override.yml
+**/docker-compose.override.yml
+**/docker-compose.*.yml.user
+*.pid
+**/pgdata/
+**/postgres-data/
+
+# Databases / temporary files
+*.dbmdl
+*.bak
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+# Temporary data
+*.tmp
+*.temp
+tmp/
+temp/
+
+# IDE cache and generated metadata
+.vs/
+.vscode/
+.idea/
+*.ncrunchsolution
+
+# Allow test coverage results and reports
+# Allow test coverage results and reports
+!coverage-report/
+!coverage-report/coverage/
+!coverage-report/coverage/coverage.cobertura.xml
+!coverage-report/report/
+!coverage-report/report/**
+
+# --- Allow project config JSONs & launch settings (but keep *local.json ignored) ---
+!**/appsettings.json
+!**/appsettings.Development.json
+!**/Properties/launchSettings.json
+
+#############################################
+# End of file
+#############################################
