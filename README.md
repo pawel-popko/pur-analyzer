@@ -68,7 +68,7 @@ Każdy plik reprezentuje inny scenariusz przetwarzania lub błędu.
 
 Wszystkie przykłady można wykorzystać do ręcznego lub automatycznego testowania endpointów API, np.:
 ```powershell
-curl -Uri "https://localhost:7173/api/v1/analyze" `
+curl -Uri "http://localhost:8080/api/v1/analyze" `
      -Method Post `
      -Headers @{ Authorization = "Basic dnM6cmVrcnV0YWNqYQ==" } `
      -Form @{ file = Get-Item "sample-data/200_53085222.PUR" }
