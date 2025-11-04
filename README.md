@@ -203,7 +203,7 @@ Po zakończeniu generowania raportu, otwórz plik:
 `D:\PROJECTS\PurAnalyzer\coverage-report\report\index.html`
 
 lub kliknij poniższy link, jeśli przeglądasz projekt lokalnie w Visual Studio Code lub przeglądarce:  
-👉 `coverage-report/report/index.html`
+👉 [coverage-report/report/index.html](coverage-report/report/index.html)
 
 Raport w formacie HTML przedstawia szczegółowe dane o pokryciu testami —  
 łącznie z procentowym udziałem testowanego kodu, przeglądem plików oraz niepokrytymi liniami.
